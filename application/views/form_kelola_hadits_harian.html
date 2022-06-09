@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Form Kelola Hadits Harian | Cheetah</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="assets/modules/datatables/datatables.min.css">
+  <link rel="stylesheet" href="assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets/modules/summernote/summernote-bs4.css">
+  <link rel="stylesheet" href="assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
+  <link rel="stylesheet" href="assets/modules/bootstrap-daterangepicker/daterangepicker.css">
+
+  <style type="text/css">
+  	.type-progress-container {
+	  position: relative;
+	  height: 3px;
+	  opacity: 0;
+	  background: #f5f5f5;
+	}
+
+	.type-progress-container.focus { opacity: 1; }
+
+	.type-progress-container .type-progress {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  bottom: 0;
+	  width: 0%;
+	  background: #337ab7;
+	}
+  </style>
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+<!-- Start GA -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-94034622-3');
+</script>
+<!-- /END GA --></head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+          </ul>
+        </form>
+        <ul class="navbar-nav navbar-right">
+          
+        </ul>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html">Cheetah</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="index.html">CRJ</a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Menu</li>
+            <li><a class="nav-link" href="kelola_donasi.html"><i class="fas fa-coins"></i> <span>Donasi</span></a></li>
+            <li><a class="nav-link" href="kelola_kajian.html"><i class="fas fa-book-reader"></i> <span>Kajian</span></a></li>
+            <li><a class="nav-link" href="kelola_artikel.html"><i class="fas fa-newspaper"></i> <span>Artikel</span></a></li>
+            <li class="active"><a class="nav-link" href="kelola_hadits_harian.html"><i class="fas fa-star-and-crescent"></i> <span>Hadits Harian</span></a></li>
+            
+            <li class="menu-header">Data Master</li>
+            <li class="active"><a class="nav-link" href="kelola_pengumuman.html"><i class="fas fa-bullhorn"></i> <span>Pengumuman</span></a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>Form Kelola Hadits Harian</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a href="#">Beranda</a></div>
+              <div class="breadcrumb-item"><a href="#">Kelola Hadits Harian</a></div>
+              <div class="breadcrumb-item">Form</div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+
+                  	<form id="form_hadits_harian">
+	                    <div class="form-group row mb-4">
+	                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Isi Hadits</label>
+	                      <div class="col-sm-12 col-md-7">
+	                        <textarea rows="20" cols="90" class="form-control" required="" id="isi_hadits"></textarea>
+	                      </div>
+	                    </div>
+	                    <div class="form-group row mb-4">
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Arti Hadits</label>
+                        <div class="col-sm-12 col-md-7">
+                          <textarea rows="20" cols="90" class="form-control" required="" id="arti_hadits"></textarea>
+                        </div>
+                      </div>
+	                    <div class="form-group row mb-4">
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Riwayat</label>
+                        <div class="col-sm-12 col-md-7">
+                          <input type="text" class="form-control" id="riwayat" placeholder="contoh: H.R. Al Bukhari">
+                        </div>
+                      </div>
+                      <div class="form-group row mb-4">
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal</label>
+                        <div class="col-sm-12 col-md-7">
+                           <input type="text" class="form-control datepicker" id="tanggal" required="">
+                        </div>
+                      </div>
+                    
+	                    <div class="form-group row mb-4">
+	                      <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+	                      <div class="col-sm-12 col-md-7">
+	                        <button type="submit" class="btn btn-primary">Publish</button>
+	                      </div>
+	                    </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; 2021 <div class="bullet"></div> <a href="#">IT Cheetah RJ Pekanbaru</a>
+        </div>
+        <div class="footer-right">
+          
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="assets/modules/jquery.min.js"></script>
+  <script src="assets/modules/popper.js"></script>
+  <script src="assets/modules/tooltip.js"></script>
+  <script src="assets/modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="assets/modules/moment.min.js"></script>
+  <script src="assets/js/stisla.js"></script>
+  
+  <!-- JS Libraies -->
+  <script src="assets/modules/datatables/datatables.min.js"></script>
+  <script src="assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script src="assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
+  <script src="assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <script src="assets/modules/sweetalert/sweetalert.min.js"></script>
+  <script src="assets/modules/summernote/summernote-bs4.js"></script>
+  <script src="assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+  <script src="assets/modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Page Specific JS File -->
+  <script src="assets/js/page/modules-datatables.js"></script>
+  <script src="assets/js/page/modules-sweetalert.js"></script>
+  
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <!-- new js -->
+  <script src="js/jquery.typeProgress.js"></script>
+  <script src="js/jquery.mask.js"></script>
+
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+
+  <script type="text/javascript" src="js/app.js"></script>
+
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+
+  <script type="text/javascript">
+
+
+  	const queryString = window.location.search;
+  	console.log(queryString);
+  	const urlParams = new URLSearchParams(queryString);
+  	console.log(urlParams);
+  	const key = urlParams.get('param');
+  	console.log(key);
+  	var action = "";
+ 
+    if(key){
+  		var database = firebase.database();
+  		// This is reference to tha database, to fetch data from database use below code:
+  		var starCountRef = firebase.database().ref('Hadits/'+key);
+  		// Add ref of child if any
+  		starCountRef.on('value', function(snapshot) {
+  		  if (snapshot.exists()) {
+  		  	action = "edit";
+  		  	$("#isi_hadits").val(snapshot.val().isi_hadits);
+          $('#arti_hadits').val(snapshot.val().arti_hadits);
+  		  	$('#riwayat').val(snapshot.val().riwayat);
+          $('#tanggal').val(snapshot.val().tanggal);
+  		  	console.log(action);
+  		  }
+  		  else {
+  		  	action = "tambah";
+  		  	console.log(action);
+  		  }
+  		});
+  	}
+    else{
+  		action = "tambah";
+  		console.log(action);
+  	}
+    
+  </script>
+
+  <script type="text/javascript">
+  	
+	$('#form_hadits_harian').off('submit').on('submit', function(event){
+		event.preventDefault();
+		if(action=="tambah"){
+			console.log("tombol ditekan");
+
+			var databaseRef = firebase.database().ref("Hadits/");
+        var pushData = databaseRef.push({
+            isi_hadits: $("#isi_hadits").val(),
+            arti_hadits: $('#arti_hadits').val(),
+            riwayat: $('#riwayat').val(),
+            tanggal: $('#tanggal').val(),
+            id:""
+        },
+        function(error){
+          if (error) {
+           console.error(error)
+           	swal({
+                title: "Ups.. terjadi masalah",
+                icon: "error"
+              });
+           return
+          }
+          console.log('Push successful');
+          //add upload function here
+          console.log("keynya : "+pushData.key);
+          databaseRef.child('/'+pushData.key).update({id:pushData.key});
+          swal({
+            title: "Berhasil Publish Data Hadits",
+            icon: "success"
+          })
+          .then(function() {
+            window.location = "kelola_hadits_harian.html";
+          });
+
+        });
+	    }
+
+	    if(action=="edit"){
+        var databaseRef = firebase.database().ref("Hadits/");
+
+    		//jika tidak ganti banner atau foto
+    		databaseRef.child('/'+key).update({
+          isi_hadits: $("#isi_hadits").val(),
+          arti_hadits: $('#arti_hadits').val(),
+          riwayat: $('#riwayat').val(),
+          tanggal: $('#tanggal').val(),
+        });
+        swal({
+          title: "Berhasil Mengedit Data Hadits",
+          icon: "success"
+        })
+        .then(function() {
+          window.location = "kelola_hadits_harian.html";
+        });
+	    	
+	    }
+	  });
+
+    </script>
+  </body>
+</html>

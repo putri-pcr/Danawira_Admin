@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Kelola Kajian | Cheetah</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="assets/modules/datatables/datatables.min.css">
+  <link rel="stylesheet" href="assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+<!-- Start GA -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-94034622-3');
+</script>
+<!-- /END GA -->
+
+<style> 
+  /* Content of modal div is center aligned */ 
+  .modal { 
+    text-align: center; 
+  } 
+</style> 
+</head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+          </ul>
+        </form>
+        <ul class="navbar-nav navbar-right">
+          
+        </ul>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html">Cheetah</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="index.html">CRJ</a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Menu</li>
+            <li><a class="nav-link" href="kelola_donasi.html"><i class="fas fa-coins"></i> <span>Donasi</span></a></li>
+            <li class="active"><a class="nav-link" href="kelola_kajian.html"><i class="fas fa-book-reader"></i> <span>Kajian</span></a></li>
+            <li><a class="nav-link" href="kelola_artikel.html"><i class="fas fa-newspaper"></i> <span>Artikel</span></a></li>
+            <li><a class="nav-link" href="kelola_hadits_harian.html"><i class="fas fa-star-and-crescent"></i> <span>Hadits Harian</span></a></li>
+            
+            <li class="menu-header">Data Master</li>
+            <li><a class="nav-link" href="kelola_pengumuman.html"><i class="fas fa-bullhorn"></i> <span>Pengumuman</span></a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>Kelola Kajian</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a href="#">Beranda</a></div>
+              <div class="breadcrumb-item">Kelola Kajian</div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <h2 class="section-title">List Data Kajian</h2>
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>List Data Kajian</h4>
+                    <div class="card-header-action">
+                      <a href="form_kelola_kajian.html" class="btn btn-icon icon-left btn-primary"><i class="fas fa-plus"></i> Tambah Data</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped" id="datatable" width="100%">
+                        <thead>                                 
+                          <tr>
+                            <th class="text-center">#</th>
+                            <th>Judul</th>
+                            <th>Banner</th>
+                            <th>Deskripsi</th>
+                            <th>Pemateri</th>
+                            <th>Kategori</th>
+                            <th>Tanggal</th>
+                            <th>Waktu (WIB)</th>
+                            <th>Alamat</th>
+                            <th>Link Kajian</th>
+                            <th width="10%">Aksi</th>
+                          </tr>
+                        </thead>
+                        <tbody id="body-table">
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; 2021 <div class="bullet"></div> <a href="#">IT Cheetah RJ Pekanbaru</a>
+        </div>
+        <div class="footer-right">
+          
+        </div>
+      </footer>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="lihatDokumen" data-keyboard="false" data-backdrop="static">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title w-100" id="modal-title-lihatdokumen">Banner Kajian</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body w-100">
+            <div id="banner"></div>
+          </div>
+          <div class="modal-footer bg-whitesmoke br">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="assets/modules/jquery.min.js"></script>
+  <script src="assets/modules/popper.js"></script>
+  <script src="assets/modules/tooltip.js"></script>
+  <script src="assets/modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="assets/modules/moment.min.js"></script>
+  <script src="assets/js/stisla.js"></script>
+  
+  <!-- JS Libraies -->
+  <script src="assets/modules/datatables/datatables.min.js"></script>
+  <script src="assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script src="assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
+  <script src="assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <script src="assets/modules/sweetalert/sweetalert.min.js"></script>
+
+  <!-- Page Specific JS File -->
+  <script src="assets/js/page/modules-datatables.js"></script>
+  <script src="assets/js/page/modules-sweetalert.js"></script>
+  
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+<!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+
+  <script type="text/javascript" src="js/app.js"></script>
+
+  <script type="text/javascript">
+
+    var table = $('#datatable').DataTable();
+
+    var rootRef = firebase.database().ref().child("Kajian");
+    var nomor = 0;
+    var lat_long = "";
+    rootRef.on("child_added", snap => {
+      var dataSet = [
+      nomor=nomor+1,
+      snap.child("judul").val(),
+      '<a href="javascript:void(0)" data-src="'+snap.child("foto").val()+'" class="btn btn-sm btn-icon icon-left btn-outline-primary lihatBannerKajian"><img alt="image" src="'+snap.child("foto").val()+'" width="50"></a>',
+      snap.child("deskripsi").val(), 
+      snap.child("pemateri").val(),
+      snap.child("kategori").val(),
+      snap.child("tanggal").val(),
+      snap.child("jam_mulai").val()+" - "+snap.child("jam_selesai").val(),
+
+      snap.child("tempat").val()+", "+
+      snap.child("alamat").val()+"\n"+
+      '<iframe src="https://maps.google.com/maps?q='+snap.child("lat").val()+','+snap.child("long").val()+'&z=15&output=embed" width="90" height="90" frameborder="2" style="border:0" allowfullscreen=""></iframe>',
+      snap.child("link_kajian").val(),
+
+      '<a href="form_kelola_kajian.html?param='+snap.child("id").val()+'" title="Edit" class="btn btn-icon btn-sm btn-info"><i class="fas fa-pencil-alt"></i></a> <a href="javascript:void(0)" data-id="'+snap.child("id").val()+'" title="Hapus" class="btn btn-icon btn-sm btn-danger btnHapusDataKajian"><i class="fas fa-trash"></i></a>'
+
+      ];
+      table.rows.add([dataSet]).draw();
+    })
+
+    $(document).off('click', '.btnHapusDataKajian').on('click', '.btnHapusDataKajian', function(){
+      var id = $(this).data('id');
+      console.log(id);
+      
+      swal({
+        title: "Yakin Hapus Kajian Ini ?",
+        text: "Data yang sudah dihapus tidak bisa dikembalikan",
+        icon: "warning",
+        buttons: ["Batal", "Hapus"],
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          var dbRef = firebase.database().ref('Kajian/'+id);
+          // console.log(dbRef);
+          dbRef.remove()
+          .then(function() {
+            console.log("Remove succeeded.");
+            swal({
+              title: "Berhasil Menghapus Kajian",
+              icon: "success"
+            })
+            .then(function() {
+              window.location = "kelola_kajian.html";
+            });
+          })
+          .catch(function(error) {
+            console.log("Remove failed: " + error.message);
+            swal({
+              title: "Gagal Menghapus Kajian",
+              icon: "error"
+            });
+          });
+        }
+      });
+    });
+
+    $(document).off('click', '.lihatBannerKajian').on('click', '.lihatBannerKajian', function(){
+      var src = $(this).data('src');
+      $("#banner").html('<embed src="'+src+'" frameborder="0" width="100%" height="400px">');
+      $("#lihatDokumen").modal('show');
+    });
+    
+  </script>
+</body>
+</html>

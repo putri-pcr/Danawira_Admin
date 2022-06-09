@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Konfirmasi Donatur | Cheetah</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/modules/fontawesome/css/all.min.css">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="assets/modules/datatables/datatables.min.css">
+  <link rel="stylesheet" href="assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+<!-- Start GA -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-94034622-3');
+</script>
+<!-- /END GA --></head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <div class="navbar-bg"></div>
+      <nav class="navbar navbar-expand-lg main-navbar">
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+          </ul>
+        </form>
+        <ul class="navbar-nav navbar-right">
+          
+        </ul>
+      </nav>
+      <div class="main-sidebar sidebar-style-2">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html">Cheetah</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="index.html">CRJ</a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Menu</li>
+            <li><a class="nav-link" href="kelola_donasi_pendidikan.html"><i class="fas fa-school"></i> <span>Pendidikan</span></a></li>
+            <li><a class="nav-link" href="kelola_donasi_bencanaAlam.html"><i class="fas fa-house-damage"></i> <span>Bencana Alam</span></a></li>
+            <li><a class="nav-link" href="kelola_donasi_sosial.html"><i class="fas fa-users"></i> <span>Sosial</span></a></li>
+            <li><a class="nav-link" href="kelola_donasi_kemalangan.html"><i class="fas fa-dizzy"></i> <span>Kemalangan</span></a></li>
+            <li><a class="nav-link" href="kelola_donasi_event.html"><i class="fas fa-microphone"></i> <span>Event</span></a></li>
+            <li><a class="nav-link" href="kelola_donasi_lainnya.html"><i class="fas fa-ellipsis-h"></i> <span>Lainnya</span></a></li>
+            
+            <li class="menu-header">Data Master</li>
+            <li><a class="nav-link" href="kelola_pengumuman.html"><i class="fas fa-bullhorn"></i> <span>Pengumuman</span></a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-header">
+            <h1>Konfirmasi Donatur</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a href="#">Beranda</a></div>
+              <div class="breadcrumb-item">Kelola Donasi</div>
+              <div class="breadcrumb-item">Konfirmasi Donatur</div>
+            </div>
+          </div>
+
+          <div class="section-body">
+            <h2 class="section-title" id="judul_donasi">Donasi : [$nama_donasi] [$target]</h2>
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 id="judul_donatur">List Data Donatur</h4>
+                    <div class="card-header-action">
+                      <a href="kelola_donasi.html" class="btn btn-icon icon-left btn-primary"><i class="fas fa-angle-double-left"></i> Kembali</a>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped" id="datatable" width="100%">
+                        <thead>                                 
+                          <tr>
+                            <th class="text-center">#</th>
+                            <th>Tanggal Lapor</th>
+                            <th>Kode Unik</th>
+                            <th>Nama Donatur<br>(No Telp/Email)</th>
+                            <th>Jumlah Donasi</th>
+                            <th>Status</th>
+                            <th width="10%">Aksi</th>
+                          </tr>
+                        </thead>
+                        <tbody id="body-table">
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+      <footer class="main-footer">
+        <div class="footer-left">
+          Copyright &copy; 2021 <div class="bullet"></div> <a href="#">IT Cheetah RJ Pekanbaru</a>
+        </div>
+        <div class="footer-right">
+          
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="lihatDokumen" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title w-100" id="modal-title-lihatdokumen">Bukti Transaksi</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body w-100">
+          <div id="banner"></div>
+        </div>
+        <div class="modal-footer bg-whitesmoke br">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="assets/modules/jquery.min.js"></script>
+  <script src="assets/modules/popper.js"></script>
+  <script src="assets/modules/tooltip.js"></script>
+  <script src="assets/modules/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="assets/modules/moment.min.js"></script>
+  <script src="assets/js/stisla.js"></script>
+  
+  <!-- JS Libraies -->
+  <script src="assets/modules/datatables/datatables.min.js"></script>
+  <script src="assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script src="assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js"></script>
+  <script src="assets/modules/jquery-ui/jquery-ui.min.js"></script>
+  <script src="assets/modules/sweetalert/sweetalert.min.js"></script>
+
+  <!-- Page Specific JS File -->
+  <script src="assets/js/page/modules-datatables.js"></script>
+  <script src="assets/js/page/modules-sweetalert.js"></script>
+  
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+<!-- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+
+  <script type="text/javascript" src="js/app.js"></script>
+
+  <script type="text/javascript">
+    const rupiah = (number)=>{
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR"
+      }).format(number);
+    }
+
+    //get parameter id donasi
+    const queryString = window.location.search;
+  	const urlParams = new URLSearchParams(queryString);
+  	const key = urlParams.get('param');
+
+    var donasiRef = firebase.database().ref('Donasi/'+key);
+    donasiRef.on('value', function(snapshot) {
+      document.getElementById("judul_donasi").innerHTML = "Donasi : "+snapshot.val().judul+" ("+rupiah(snapshot.val().target)+")";
+      document.getElementById("judul_donatur").innerHTML = "List data donatur, "+"jumlah donasi yang telah terkumpul sebesar "+rupiah(snapshot.val().terkumpul);
+    });
+
+    var table = $('#datatable').DataTable();
+    var rootRef = firebase.database().ref("Donatur/").child(key);
+    var nomor = 0;
+    rootRef.on("child_added", snap => {
+      var status='';
+      var aksi='';
+      if(snap.child("status").val()=="true"){
+        var status='<span class="badge badge-success">Terkonfirmasi <i class="fas fa-check-circle"></i></span>';
+        var aksi='<a href="javascript:void(0)" data-src="'+snap.child("bukti_transfer").val()+'" title="Lihat Bukti Transfer" class="btn btn-icon btn-sm btn-info lihatBanner"><i class="fas fa-search-dollar"></i></a>';
+      }else{
+        var status='<span class="badge badge-warning">Menunggu <i class="fas fa-clock"></i></span>';
+        var aksi='<a href="javascript:void(0)" data-src="'+snap.child("bukti_transfer").val()+'" title="Lihat Bukti Transfer" class="btn btn-icon btn-sm btn-info lihatBanner"><i class="fas fa-search-dollar"></i></a> <a href="javascript:void(0)" data-id_donasi="'+snap.child("id_donasi").val()+'" data-id_donatur="'+snap.key+'" data-kode_unik="'+snap.child("kodeUnik").val()+'" data-jumlah_donasi="'+snap.child("jumlah").val()+'" title="Validasi" class="btn btn-icon btn-sm btn-info btnValidasi"><i class="fas fa-check-circle"></i></a>';
+      }
+      var dataSet = [nomor=nomor+1,snap.child("waktu_konfirmasi").val(),snap.child("kodeUnik").val(),snap.child("nama_donatur").val()+" <br> ("+snap.child("no_hp_email").val()+")", rupiah(snap.child("jumlah").val()+snap.child("kodeUnik").val()),status,aksi];
+      table.rows.add([dataSet]).draw();
+    })
+
+    $(document).off('click', '.lihatBanner').on('click', '.lihatBanner', function(){
+      var src = $(this).data('src');
+      $("#banner").html('<embed src="'+src+'" frameborder="0" width="100%" height="400px">');
+      $("#lihatDokumen").modal('show');
+    });
+
+    $(document).off('click', '.btnValidasi').on('click', '.btnValidasi', function(){
+      var id_donasi = $(this).data('id_donasi');
+      var id_donatur = $(this).data('id_donatur');
+      var jumlah_donasi = $(this).data('jumlah_donasi');
+      var kode_unik = $(this).data('kode_unik');
+      
+      swal({
+        title: "Setujui donasi ini?",
+        text: "[Perhatian] Donasi akan diakumulasikan dan data yang telah disetujui tidak dapat diubah kembali",
+        icon: "warning",
+        buttons: ["Batal", "Setujui"],
+        dangerMode: true,
+      })
+      .then((willUpdate) => {
+        if (willUpdate) {
+          updateStatusDonatur(id_donasi,id_donatur);
+          updateDonasiTerkumpul(id_donasi,jumlah_donasi,kode_unik)
+        }
+      });
+    });
+
+    function updateDonasiTerkumpul(id_donasi, jumlah_donasi, kode_unik) {
+      var donasiRef = firebase.database().ref('Donasi/'+id_donasi);
+      var terkumpul = 0;
+      donasiRef.on('value', function(snapshot) {
+        //edit donasi terkumpul
+        terkumpul = parseInt(snapshot.val().terkumpul);
+      });
+      firebase.database().ref('Donasi/'+id_donasi).update({
+        terkumpul: parseInt(jumlah_donasi)+parseInt(terkumpul)+parseInt(kode_unik)
+      });
+    }
+    function updateStatusDonatur(id_donasi, id_donatur) {
+      firebase.database().ref('Donatur/'+id_donasi+"/"+id_donatur).update({
+        status: "true",
+        waktu_validasi : new Date()
+      });
+      swal({
+        title: "Berhasil",
+        icon: "success"
+      }).then(function() {
+        location.reload();
+      });
+    }
+    
+  </script>
+</body>
+</html>
